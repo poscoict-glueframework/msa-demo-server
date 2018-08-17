@@ -7,12 +7,10 @@ import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 
 public class MyPreFilter extends ZuulFilter {
-
 	@Override
 	public boolean shouldFilter() {
 		System.out.println("############### MyPreFilter.shouldFilter() 뭐니?");
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
@@ -20,24 +18,19 @@ public class MyPreFilter extends ZuulFilter {
 		System.out.println("############### MyPreFilter.run() 뭐니?");
 		RequestContext ctx = RequestContext.getCurrentContext();
 		HttpServletRequest request = ctx.getRequest();
-		System.out.println("############### MyPreFilter.run() " + request.getMethod());
-		System.out.println("############### MyPreFilter.run() " + request.getRequestURI());
-		// TODO Auto-generated method stub
+		System.out.println("############### MyPreFilter.run() " + request.getMethod() + " " + request.getRequestURI());
 		return null;
 	}
 
 	@Override
 	public String filterType() {
-		System.out.println("############### MyPreFilter.filterType() 뭐니?");
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("############### MyPreFilter.filterType() 뭐니? pre");
+		return "pre";
 	}
 
 	@Override
 	public int filterOrder() {
-		System.out.println("############### MyPreFilter.filterOrder() 뭐니?");
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("############### MyPreFilter.filterOrder() 뭐니? 1");
+		return 1;
 	}
-
 }

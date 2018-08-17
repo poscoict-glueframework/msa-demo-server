@@ -1,8 +1,10 @@
 server:
-  port: 8888
+  port: @serverPort@
 spring:
   application:
     name: config-server
+  profiles:
+    active: @activatedProperties@
   cloud:
     config:
       server:

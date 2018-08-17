@@ -6,7 +6,7 @@
 
 	<groupId>com.example</groupId>
 	<artifactId>demo-config-server</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>demo-config-server</name>
@@ -52,13 +52,57 @@
 	</dependencyManagement>
 
 	<build>
+		<resources>
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<profiles>
+						<profile>local</profile>
+						<profile>vdi</profile>
+						<profile>pcf</profile>
+					</profiles>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
-
-
+	<profiles>
+		<profile>
+			<id>local</id>
+			<properties>
+				<serverPort>8888</serverPort>
+				<activatedProperties>local</activatedProperties>
+			</properties>
+		</profile>
+		<profile>
+			<id>vdi</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<serverPort>8888</serverPort>
+				<activatedProperties>vdi</activatedProperties>
+			</properties>
+		</profile>
+		<profile>
+			<id>pcf</id>
+			<properties>
+				<serverPort>8080</serverPort>
+				<activeProfile>pcf</activeProfile>
+			</properties>
+		</profile>
+	</profiles>
 </project>

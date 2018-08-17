@@ -1,15 +1,15 @@
 server:
-  port: 8080
+  port: @serverPort@
 spring:
   application:
-    name:zuul-server
+    name: zuul-server
+  profiles:
+    active: @activatedProperties@
   cloud:
     config:
-      uri: http://config-server:8888
-  profiles:
-    active: vdi
+      uri: @configServerUri@
 eureka:
   client:
     enabled: true
-    server-url:
-      defaultZone: http://eureka-server:8761/eureka/
+    serverUrl:
+      defaultZone: @eurekaClientServerUri@
