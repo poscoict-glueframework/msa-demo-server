@@ -1,9 +1,9 @@
 # 관련 소스
 
-* [demo server](https://github.com/poscoict-glueframework/msa-demo-server.git)
+* [demo server] : config, eureka, zuul 예제
 * [config 관리](https://github.com/poscoict-glueframework/template-config.git)
 * [마이크로서비스 예제 : sample-api](https://github.com/poscoict-glueframework/msa-sample.git)
-* [마이크로서비스 예제 : second-api](https://github.com/poscoict-glueframework/template-config.git)
+* [마이크로서비스 예제 : second-api](https://github.com/poscoict-glueframework/msa-second.git)
 
 ```
 git clone https://github.com/poscoict-glueframework/msa-demo-server.git demo
@@ -53,3 +53,16 @@ http://localhost:8080/second-api/adapter/second?name=2nd
 * 8080 : zuul(API Gateway) 사용
 * 9080(8180) : 마이크로서비스(sample-api)에서 사용
 * 9180(8280) : 마이크로서비스(second-api)에서 사용
+
+## vdi 사용시
+
+host 파일에 다음 추가 
+
+```
+127.0.0.1 config-server
+127.0.0.1 eureka-server
+127.0.0.1 zuul-server
+127.0.0.1 sample-api
+127.0.0.1 second-api
+127.0.0.1 picfairies.vdi.dom
+```
