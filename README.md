@@ -1,9 +1,9 @@
 # 관련 소스
 
-[demo server](https://github.com/poscoict-glueframework/msa-demo-server.git)
-[config 관리](https://github.com/poscoict-glueframework/template-config.git)
-[마이크로서비스 예제 : sample-api](https://github.com/poscoict-glueframework/msa-sample.git)
-[마이크로서비스 예제 : second-api](https://github.com/poscoict-glueframework/template-config.git)
+* [demo server](https://github.com/poscoict-glueframework/msa-demo-server.git)
+* [config 관리](https://github.com/poscoict-glueframework/template-config.git)
+* [마이크로서비스 예제 : sample-api](https://github.com/poscoict-glueframework/msa-sample.git)
+* [마이크로서비스 예제 : second-api](https://github.com/poscoict-glueframework/template-config.git)
 
 ```
 git clone https://github.com/poscoict-glueframework/msa-demo-server.git demo
