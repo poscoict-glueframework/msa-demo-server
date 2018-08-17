@@ -18,7 +18,7 @@ public class MyPostFilter extends ZuulFilter {
 
 	@Override
 	public String filterType() {
-		System.out.println("############### MyPostFilter.filterType() 뭐니?");
+		System.out.println("############### MyPostFilter.filterType() 뭐니? post");
 		return "post";
 	}
 

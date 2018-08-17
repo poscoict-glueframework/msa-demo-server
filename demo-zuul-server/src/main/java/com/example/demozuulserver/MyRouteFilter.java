@@ -24,7 +24,7 @@ public class MyRouteFilter extends ZuulFilter {
 
 	@Override
 	public int filterOrder() {
-		System.out.println("############### MyPreFilter.filterOrder() 뭐니? 1");
+		System.out.println("############### MyRouteFilter.filterOrder() 뭐니? 1");
 		return 1;
 	}
 }
